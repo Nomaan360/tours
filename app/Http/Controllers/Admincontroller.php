@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\countries;
+use App\Models\services;
 use Illuminate\Support\Facades\Validator;
 
 class Admincontroller extends Controller
@@ -12,7 +13,8 @@ class Admincontroller extends Controller
     //
     function adminlogin(Request $request){
         $country_count=countries::count();
-        return view('admin.admin',compact('country_count'));
+        $services_count=services::count();
+        return view('admin.admin',compact('country_count','services_count'));
     }
     function countries(){
         $countries= countries::get();
@@ -55,4 +57,50 @@ class Admincontroller extends Controller
         ]);   
         return redirect()->route('countries'); // Replace 'login' with the actual name of your login route
     }
+
+    function services(){
+        $services= services::get();
+        return view('admin.services',compact('services'));
+    }
+    function service_add(){
+        return view('admin.service_add');
+    }
+    function service_store(Request $request){
+        $validator = Validator::make($request->all(), [ 
+            'title' => 'required|unique:services', 
+            'description' => 'required', 
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        $service= new services;   
+        $service->title=$request->title;   
+        $service->description=$request->description;   
+        $service->save();   
+        return redirect()->route('services'); // Replace 'login' with the actual name of your login route
+    }
+    function service_delete($id){
+        services::where('id',$id)->delete();
+        return redirect()->back();
+    }
+    function service_edit($id){
+        $service= services::where('id',$id)->first();
+        return view('admin.service_edit',compact('service'));
+    }
+
+    function service_update(Request $request){
+        $validator = Validator::make($request->all(), [ 
+            'title' => 'required|unique:services', 
+            'description' => 'required', 
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        services::where('id',$request->sid)->update([
+            'title'=>$request->title,
+            'description'=>$request->description
+        ]);   
+        return redirect()->route('services'); // Replace 'login' with the actual name of your login route
+    }
+
 }
