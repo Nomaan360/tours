@@ -68,3 +68,5 @@ Route::post('/service_store', [Admincontroller::class, 'service_store'])->name('
 Route::get('/service_edit/{id}', [Admincontroller::class, 'service_edit'])->name('service_edit');
 Route::get('/service_delete/{id}', [Admincontroller::class, 'service_delete'])->name('service_delete');
 Route::post('/service_update', [Admincontroller::class, 'service_update'])->name('service_update');
+
+Route::get('/queries', [Admincontroller::class, 'queries'])->name('queries');

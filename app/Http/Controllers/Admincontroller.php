@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\countries;
+use App\Models\query;
 use App\Models\services;
 use Illuminate\Support\Facades\Validator;
 
@@ -14,7 +15,8 @@ class Admincontroller extends Controller
     function adminlogin(Request $request){
         $country_count=countries::count();
         $services_count=services::count();
-        return view('admin.admin',compact('country_count','services_count'));
+        $queries=query::count();
+        return view('admin.admin',compact('country_count','services_count','queries'));
     }
     function countries(){
         $countries= countries::get();
@@ -101,6 +103,12 @@ class Admincontroller extends Controller
             'description'=>$request->description
         ]);   
         return redirect()->route('services'); // Replace 'login' with the actual name of your login route
+    }
+
+    function queries(){
+        $queries=query::get();
+        return view('admin.queries',compact('queries'));
+
     }
 
 }
