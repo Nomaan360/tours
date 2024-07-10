@@ -43,7 +43,7 @@
               </div>
               <div class="col-sm-6 col-md-3">
                 <div class="card card-stats card-round">
-              <a href="{{url(route('adminlogin'))}}"> 
+              <a href="{{url(route('countries'))}}"> 
                   <div class="card-body">
                     <div class="row align-items-center">
                       <div class="col-icon">
