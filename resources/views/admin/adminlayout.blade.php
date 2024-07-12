@@ -12,6 +12,7 @@
       href="assets/img/kaiadmin/favicon.ico"
       type="image/x-icon"
     />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <!-- Fonts and icons -->
     <script src="{{ asset('assets/js/plugin/webfont/webfont.min.js') }}"></script>
@@ -482,6 +483,10 @@
                     </li>
                   </ul>
                 </li>
+                @php
+                $queries= DB::table('queries')->where('read',0)->get();
+                $countquery=count($queries);
+                @endphp
                 <li class="nav-item topbar-icon dropdown hidden-caret">
                   <a
                     class="nav-link dropdown-toggle"
@@ -493,68 +498,41 @@
                     aria-expanded="false"
                   >
                     <i class="fa fa-bell"></i>
-                    <span class="notification">4</span>
+                    <span class="notification" id="notificationCount">{{ $countquery }}</span>
                   </a>
                   <ul
                     class="dropdown-menu notif-box animated fadeIn"
                     aria-labelledby="notifDropdown"
                   >
                     <li>
-                      <div class="dropdown-title">
-                        You have 4 new notification
+                      <div class="dropdown-title" id="dropdown-title">
+                        You have {{ $countquery }} new notification
                       </div>
                     </li>
                     <li>
                       <div class="notif-scroll scrollbar-outer">
-                        <div class="notif-center">
-                          <a href="#">
-                            <div class="notif-icon notif-primary">
-                              <i class="fa fa-user-plus"></i>
-                            </div>
-                            <div class="notif-content">
-                              <span class="block"> New user registered </span>
-                              <span class="time">5 minutes ago</span>
-                            </div>
-                          </a>
-                          <a href="#">
-                            <div class="notif-icon notif-success">
-                              <i class="fa fa-comment"></i>
-                            </div>
-                            <div class="notif-content">
-                              <span class="block">
-                                Rahmad commented on Admin
-                              </span>
-                              <span class="time">12 minutes ago</span>
-                            </div>
-                          </a>
-                          <a href="#">
-                            <div class="notif-img">
-                              <img
-                                src="{{ asset('assets/img/profile2.jpg')}}"
-                                alt="Img Profile"
-                              />
-                            </div>
-                            <div class="notif-content">
-                              <span class="block">
-                                Reza send messages to you
-                              </span>
-                              <span class="time">12 minutes ago</span>
-                            </div>
-                          </a>
-                          <a href="#">
-                            <div class="notif-icon notif-danger">
-                              <i class="fa fa-heart"></i>
-                            </div>
-                            <div class="notif-content">
-                              <span class="block"> Farrah liked Admin </span>
-                              <span class="time">17 minutes ago</span>
-                            </div>
-                          </a>
+                        <div class="notif-center" id="notify_tbl"> 
+                            @foreach ( $queries as $query)
+                                <a href="#">
+                                  <div class="notif-img">
+                                    <img
+                                      src="{{ asset('assets/img/profile2.jpg')}}"
+                                      alt="Img Profile"
+                                    />
+                                  </div>
+                                  <div class="notif-content">
+                                    <span class="block">
+                                      {{ $query->uname }} send messages to you
+                                    </span>
+                                    <span class="time">12 minutes ago</span>
+                                  </div>
+                                </a>
+                            @endforeach
                         </div>
                       </div>
                     </li>
                     <li>
-                      <a class="see-all" href="javascript:void(0);"
+                      <a class="see-all" href="{{url(route('queries'))}}"
                         >See all notifications<i class="fa fa-angle-right"></i>
                       </a>
                     </li>
@@ -988,6 +966,80 @@
         lineColor: "#ffa534",
         fillColor: "rgba(255, 165, 52, .14)",
       });
+    </script>
+    <script>
+    $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        function callData(){
+          $.ajax({
+              url: '{{ route("fetchdata") }}',
+              type: 'GET',
+              dataType: 'json',
+              success: function(response) {
+                let newCount=response.queries.length
+                let query=response.queries
+                $('#notificationCount').text(newCount);
+                const notify_tbl = document.getElementById("notify_tbl");
+                const drop_title = document.getElementById("dropdown-title");
+                drop_title.innerText=`You have ${newCount} new notification`
+                while (notify_tbl.firstChild) {
+                    notify_tbl.removeChild(notify_tbl.firstChild);
+                }
+
+                query.forEach(item => {
+                    li = `<a href="#">
+                                  <div class="notif-img">
+                                    <img
+                                      src="{{ asset('assets/img/profile2.jpg')}}"
+                                      alt="Img Profile"
+                                    />
+                                  </div>
+                                  <div class="notif-content">
+                                    <span class="block">
+                                      ${item['uname'] } send messages to you
+                                    </span>
+                                    <span class="time">12 minutes ago</span>
+                                  </div>
+                            </a>`;
+                      let temp = document.createElement('div');
+                      temp.innerHTML = li;
+
+                      // Append the first child of temp (which is the 'a' element) to notify_tbl
+                      notify_tbl.appendChild(temp.firstChild);
+                });
+              }
+          })
+        }
+
+        setInterval(function() {
+          callData()
+        }, 3000);
+
+        function readNoify(){
+          $.ajax({
+              url: '{{ route("readall") }}',
+              type: 'GET',
+              dataType: 'json',
+              success: function(response) {
+                console.log('response',response)
+              }
+          })
+         
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the dropdown element
+            const dropdown = document.getElementById('notifDropdown');
+            
+            // Add event listener for when dropdown is hidden
+            dropdown.addEventListener('hidden.bs.dropdown', function () {
+                // Call readNoify() function when dropdown is closed
+                readNoify();
+            });
+        });
+
     </script>
   </body>
 </html>

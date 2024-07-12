@@ -26,7 +26,7 @@
                             <th>Sr</th>
                             <th>Service Title</th>
                             <th>Service Description</th>
-                            <th colspan="2">Action</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>

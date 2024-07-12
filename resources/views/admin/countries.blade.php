@@ -25,7 +25,7 @@
                           <tr>
                             <th>Sr</th>
                             <th>Country</th>
-                            <th colspan="2">Action</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>

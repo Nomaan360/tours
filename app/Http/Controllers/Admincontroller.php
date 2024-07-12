@@ -106,9 +106,24 @@ class Admincontroller extends Controller
     }
 
     function queries(){
+        query::where('read',0)->update([
+            'read'=>1
+        ]);
         $queries=query::get();
         return view('admin.queries',compact('queries'));
 
+    }
+    function fetchdata(){
+        $data=array();
+        $queries=query::where('read',0)->get();
+        $data['queries']=$queries;
+        return json_encode($data);
+    }
+    function readall(){
+        $queries=query::where('read',0)->update([
+            'read'=>1
+        ]);
+        return json_encode('done');
     }
 
 }

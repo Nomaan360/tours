@@ -70,3 +70,5 @@ Route::get('/service_delete/{id}', [Admincontroller::class, 'service_delete'])->
 Route::post('/service_update', [Admincontroller::class, 'service_update'])->name('service_update');
 
 Route::get('/queries', [Admincontroller::class, 'queries'])->name('queries');
+Route::get('/fetchdata', [Admincontroller::class, 'fetchdata'])->name('fetchdata');
+Route::get('/readall', [Admincontroller::class, 'readall'])->name('readall');
