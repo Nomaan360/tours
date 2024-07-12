@@ -15,7 +15,7 @@
                     </div>
                     <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-img-1.png);">
                         <h5 class="section-about-title pe-3">About Us</h5>
-                        <h1 class="mb-4">Welcome to <span class="text-primary">Tairans</span></h1>
+                        <h1 class="mb-4">Welcome to <span class="text-primary">Tairaan</span></h1>
                         <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolorum, doloribus sunt dicta, officia voluptatibus libero necessitatibus natus impedit quam ullam assumenda? Id atque iste consectetur. Commodi odit ab saepe!</p>
                         <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quos voluptatem suscipit neque enim, doloribus ipsum rem eos distinctio, dignissimos nisi saepe nulla? Libero numquam perferendis provident placeat molestiae quia?</p>
                         <div class="row gy-2 gx-4 mb-4">
@@ -1141,7 +1141,7 @@
                     </div>
                     <div class="col-lg-6">
                         <h1 class="text-white mb-3">Book A Tour Deals</h1>
-                        <p class="text-white mb-4">Get <span class="text-warning">50% Off</span> On Your First Adventure Trip With Tairans. Get More Deal Offers Here.</p>
+                        <p class="text-white mb-4">Get <span class="text-warning">50% Off</span> On Your First Adventure Trip With Tairaan. Get More Deal Offers Here.</p>
                         <form>
                             <div class="row g-3">
                                 <div class="col-md-6">
@@ -1405,7 +1405,7 @@
                             </p>
                         </div>
                         <div class="testimonial-img p-1">
-                            <img src="{{ asset('img/guide-4.jpg')}}" class="img-fluid rounded-circle" alt="Image">
+                            <img src="{{ asset('img/client.jpg')}}" class="img-fluid rounded-circle" alt="Image">
                         </div>
                         <div style="margin-top: -35px;">
                             <h5 class="mb-0">Ilyas</h5>
@@ -1425,7 +1425,7 @@
                             </p>
                         </div>
                         <div class="testimonial-img p-1">
-                            <img src="{{ asset('img/testimonial-2.jpg')}}" class="img-fluid rounded-circle" alt="Image">
+                            <img src="{{ asset('img/client.jpg')}}" class="img-fluid rounded-circle" alt="Image">
                         </div>
                         <div style="margin-top: -35px;">
                             <h5 class="mb-0">Anas</h5>
@@ -1445,7 +1445,7 @@
                             </p>
                         </div>
                         <div class="testimonial-img p-1">
-                            <img src="{{ asset('img/testimonial-3.jpg')}}" class="img-fluid rounded-circle" alt="Image">
+                            <img src="{{ asset('img/client.jpg')}}" class="img-fluid rounded-circle" alt="Image">
                         </div>
                         <div style="margin-top: -35px;">
                             <h5 class="mb-0">Mohtasim</h5>
@@ -1465,7 +1465,7 @@
                             </p>
                         </div>
                         <div class="testimonial-img p-1">
-                            <img src="{{ asset('img/testimonial-4.jpg')}}" class="img-fluid rounded-circle" alt="Image">
+                            <img src="{{ asset('img/client.jpg')}}" class="img-fluid rounded-circle" alt="Image">
                         </div>
                         <div style="margin-top: -35px;">
                             <h5 class="mb-0">Farhaan</h5>

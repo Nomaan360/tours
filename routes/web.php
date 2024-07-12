@@ -36,18 +36,13 @@ Route::get('/destination', function () {
 Route::get('/gallery', function () {
     return view('gallery');
 })->name('gallery');
-Route::get('/guides', function () {
-    return view('guides');
-})->name('guides');
 Route::get('/packages', function () {
     return view('packages');
 })->name('packages');
 Route::get('/services', function () {
     return view('services');
 })->name('services');
-Route::get('/testimonial', function () {
-    return view('testimonial');
-})->name('testimonial');
+
 Route::get('/tour', function () {
     return view('tour');
 })->name('tour');
@@ -62,7 +57,7 @@ Route::get('/country_edit/{id}', [Admincontroller::class, 'country_edit'])->name
 Route::get('/country_delete/{id}', [Admincontroller::class, 'country_delete'])->name('country_delete');
 Route::post('/country_update', [Admincontroller::class, 'country_update'])->name('country_update');
 
-Route::get('/services', [Admincontroller::class, 'services'])->name('services');
+Route::get('/admin_services', [Admincontroller::class, 'admin_services'])->name('admin_services');
 Route::get('/service_add', [Admincontroller::class, 'service_add'])->name('service_add');
 Route::post('/service_store', [Admincontroller::class, 'service_store'])->name('service_store');
 Route::get('/service_edit/{id}', [Admincontroller::class, 'service_edit'])->name('service_edit');

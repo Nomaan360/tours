@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Tairans - Tourism Website Template</title>
+        <title>Tairaan - Tourism Website Template</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -66,7 +66,7 @@
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0">
-                    <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Tairans</h1>
+                    <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Tairaan</h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -82,16 +82,13 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
-                                <a href="destination" class="dropdown-item">Destination</a>
-                                <a href="tour" class="dropdown-item">Explore Tour</a>
-                                <a href="booking" class="dropdown-item">Travel Booking</a>
-                                <a href="gallery" class="dropdown-item">Our Gallery</a>
-                                <a href="guides" class="dropdown-item">Travel Guides</a>
-                                <a href="testimonial" class="dropdown-item">Testimonial</a>
-                                <a href="404" class="dropdown-item">404 Page</a>
+                                <a href="{{url(route('destination'))}}" class="dropdown-item">Destination</a>
+                                <a href="{{url(route('tour'))}}" class="dropdown-item">Explore Tour</a>
+                                <a href="{{url(route('booking'))}}" class="dropdown-item">Travel Booking</a>
+                                <a href="{{url(route('gallery'))}}" class="dropdown-item">Our Gallery</a>
                             </div>
                         </div>
-                        <a href="contact" class="nav-item nav-link">Contact</a>
+                        <a href="{{url(route('contact'))}}" class="nav-item nav-link">Contact</a>
                     </div>
                     <a href="" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
                 </div>
@@ -161,14 +158,7 @@
             </div>
             <!-- Carousel End -->
         </div>
-        <div class="container-fluid search-bar position-relative" style="top: -50%; transform: translateY(-50%);">
-            <div class="container">
-                <div class="position-relative rounded-pill w-100 mx-auto p-5" style="background: rgba(19, 53, 123, 0.8);">
-                    <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Eg: Thailand">
-                    <button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2" style="top: 50%; right: 46px; transform: translateY(-50%);">Search</button>
-                </div>
-            </div>
-        </div>
+      
         <!-- Navbar & Hero End -->
 
         @yield('content')
@@ -280,7 +270,7 @@
             <div class="container">
                 <div class="row g-4 align-items-center">
                     <div class="col-md-6 text-center text-md-end mb-md-0">
-                        <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">Tairans</a>, All right reserved.
+                        <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">Tairaan</a>, All right reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-start">
                         <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
