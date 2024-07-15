@@ -46,9 +46,12 @@ Route::get('/services', function () {
 Route::get('/tour', function () {
     return view('tour');
 })->name('tour');
+Route::get('/adimin_login', function () {
+    return view('admin.adimin_login');
+})->name('adimin_login');
 Route::post('/sendmail', [Usercontroller::class, 'sendmail'])->name('sendmail');
 
-Route::get('/adminlogin', [Admincontroller::class, 'adminlogin'])->name('adminlogin');
+Route::get('/dashboard', [Admincontroller::class, 'dashboard'])->name('dashboard');
 
 Route::get('/countries', [Admincontroller::class, 'countries'])->name('countries');
 Route::get('/country_add', [Admincontroller::class, 'country_add'])->name('country_add');
@@ -63,6 +66,8 @@ Route::post('/service_store', [Admincontroller::class, 'service_store'])->name('
 Route::get('/service_edit/{id}', [Admincontroller::class, 'service_edit'])->name('service_edit');
 Route::get('/service_delete/{id}', [Admincontroller::class, 'service_delete'])->name('service_delete');
 Route::post('/service_update', [Admincontroller::class, 'service_update'])->name('service_update');
+Route::post('/admin_signin', [Admincontroller::class, 'admin_signin'])->name('admin_signin');
+Route::get('/admin_logout', [Admincontroller::class, 'admin_logout'])->name('admin_logout');
 
 Route::get('/queries', [Admincontroller::class, 'queries'])->name('queries');
 Route::get('/fetchdata', [Admincontroller::class, 'fetchdata'])->name('fetchdata');

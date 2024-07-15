@@ -12,11 +12,15 @@ use Illuminate\Support\Facades\Validator;
 class Admincontroller extends Controller
 {
     //
-    function adminlogin(Request $request){
-        $country_count=countries::count();
-        $services_count=services::count();
-        $queries=query::count();
-        return view('admin.admin',compact('country_count','services_count','queries'));
+    function dashboard(Request $request){
+        if(Session::has('adminmail')){   
+            $country_count=countries::count();
+            $services_count=services::count();
+            $queries=query::count();
+            return view('admin.admin',compact('country_count','services_count','queries'));
+        }else{
+            return redirect()->route('adimin_login'); 
+        }
     }
     function countries(){
         $countries= countries::get();
@@ -126,4 +130,24 @@ class Admincontroller extends Controller
         return json_encode('done');
     }
 
+    function admin_signin(Request $request){
+        $validator = Validator::make($request->all(), [ 
+            'uname' => 'required', 
+            'pswd' => 'required', 
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        if($request->uname=='admin'&&$request->pswd=='admin'){
+            Session::put('adminmail',$request->uname);
+            return redirect()->route('dashboard');
+        }
+        else{
+            return redirect()->route('dashboard');
+        }
+    }
+    function admin_logout(){
+        Session::forget('adminmail');
+        return redirect()->route('dashboard');
+    }
 }

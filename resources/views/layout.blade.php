@@ -54,7 +54,7 @@
                 <div class="col-lg-4 text-center text-lg-end">
                     <div class="d-inline-flex align-items-center" style="height: 45px;">
                         <div class="dropdown">
-                            <a href="#" class="text-light"><small><i class="fa fa-home me-2"></i> My Dashboard</small></a>
+                            <a href="{{url(route('dashboard'))}}" class="text-light"><small><i class="fa fa-home me-2"></i> My Dashboard</small></a>
                         </div>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                         </div>
                         <a href="{{url(route('contact'))}}" class="nav-item nav-link">Contact</a>
                     </div>
-                    <a href="" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+                    <a href="{{url(route('booking'))}}" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
                 </div>
             </nav>
 
@@ -212,7 +212,6 @@
                         <div class="footer-item d-flex flex-column">
                             <h4 class="mb-4 text-white">Support</h4>
                             <a href="{{url(route('contact'))}}"><i class="fas fa-angle-right me-2"></i> Contact</a>
-                            <a href="{{url(route('guides'))}}"><i class="fas fa-angle-right me-2"></i> Our Guides</a>
                             <a href="{{url(route('contact'))}}"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
                             <a href="{{url(route('contact'))}}"><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
                             <a href="{{url(route('contact'))}}"><i class="fas fa-angle-right me-2"></i> Sitemap</a>

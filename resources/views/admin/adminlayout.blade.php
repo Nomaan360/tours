@@ -76,7 +76,7 @@
             <ul class="nav nav-secondary">
               <li class="nav-item active">
                 <a
-                  href="{{url(route('adminlogin'))}}"
+                  href="{{url(route('dashboard'))}}"
                   class="collapsed"
                   aria-expanded="false"
                 >
@@ -666,7 +666,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Account Setting</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" href="{{url(route('admin_logout'))}}">Logout</a>
                       </li>
                     </div>
                   </ul>
