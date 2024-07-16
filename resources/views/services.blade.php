@@ -14,7 +14,7 @@
                     <div class="col-lg-12">
                         <div class="row g-4">
                             @foreach ($services as $service)
-                                <div class="col-6">
+                                <div class="col-12 col-md-6">
                                     <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
                                         <div class="service-content text-end">
                                             <h5 class="mb-4">{{ $service->title }}</h5>

@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
+            $table->string('destination');
+            $table->string('country_id');
+            $table->string('tour_type');
             $table->timestamps();
         });
     }

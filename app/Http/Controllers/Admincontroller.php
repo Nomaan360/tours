@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Session;
 use App\Models\countries;
 use App\Models\query;
 use App\Models\services;
+use App\Models\package;
 use Illuminate\Support\Facades\Validator;
 
 class Admincontroller extends Controller
@@ -17,7 +18,8 @@ class Admincontroller extends Controller
             $country_count=countries::count();
             $services_count=services::count();
             $queries=query::count();
-            return view('admin.admin',compact('country_count','services_count','queries'));
+            $packages=package::count();
+            return view('admin.admin',compact('country_count','services_count','queries','packages'));
         }else{
             return redirect()->route('adimin_login'); 
         }
@@ -149,5 +151,30 @@ class Admincontroller extends Controller
     function admin_logout(){
         Session::forget('adminmail');
         return redirect()->route('dashboard');
+    }
+
+    function admin_packages(){
+        $packages=package::select('packages.*','countries.countryname')->join('countries','countries.id','=','packages.country_id')->get();
+        return view('admin.packages',compact('packages'));
+    }
+    function package_add(){
+        $countries=countries::get();
+        return view('admin.package_add',compact('countries'));
+    }
+    function package_store(Request $request){
+        $validator = Validator::make($request->all(), [ 
+            'tour_type' => 'required', 
+            'countryname' => 'required', 
+            'destination' => 'required', 
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        $package= new package;   
+        $package->destination=$request->destination;   
+        $package->tour_type=$request->tour_type;   
+        $package->country_id=$request->countryname;   
+        $package->save();   
+        return redirect()->route('admin_packages'); 
     }
 }
