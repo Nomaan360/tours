@@ -74,11 +74,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="{{url(route('home'))}}" class="nav-item nav-link active">Home</a>
-                        <a href="{{url(route('about'))}}" class="nav-item nav-link">About</a>
-                        <a href="{{url(route('services'))}}" class="nav-item nav-link">Services</a>
-                        <a href="{{url(route('packages'))}}" class="nav-item nav-link">Packages</a>
-                        <a href="{{url(route('blog'))}}" class="nav-item nav-link">Blog</a>
+                        <a href="{{url(route('home'))}}" class="nav-item nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Home</a>
+                        <a href="{{url(route('about'))}}" class="nav-item nav-link {{ request()->routeIs('about') ? 'active' : '' }}">About</a>
+                        <a href="{{url(route('services'))}}" class="nav-item nav-link {{ request()->routeIs('services') ? 'active' : '' }}">Services</a>
+                        <a href="{{url(route('packages'))}}" class="nav-item nav-link {{ request()->routeIs('packages') ? 'active' : '' }}">Packages</a>
+                        {{-- <a href="{{url(route('blog'))}}" class="nav-item nav-link">Blog</a> --}}
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
@@ -88,7 +88,7 @@
                                 <a href="{{url(route('gallery'))}}" class="dropdown-item">Our Gallery</a>
                             </div>
                         </div>
-                        <a href="{{url(route('contact'))}}" class="nav-item nav-link">Contact</a>
+                        <a href="{{url(route('contact'))}}" class="nav-item nav-link  {{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a>
                     </div>
                     <a href="{{url(route('booking'))}}" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
                 </div>
@@ -205,7 +205,7 @@
                             <h4 class="mb-4 text-white">Company</h4>
                             <a href="{{url(route('about'))}}"><i class="fas fa-angle-right me-2"></i> About</a>
                             <a href="{{url(route('contact'))}}"><i class="fas fa-angle-right me-2"></i> Contact</a>
-                            <a href="{{url(route('blog'))}}"><i class="fas fa-angle-right me-2"></i> Blog</a>
+                            {{-- <a href="{{url(route('blog'))}}"><i class="fas fa-angle-right me-2"></i> Blog</a> --}}
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">

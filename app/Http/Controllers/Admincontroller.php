@@ -64,7 +64,7 @@ class Admincontroller extends Controller
         return redirect()->route('countries'); // Replace 'login' with the actual name of your login route
     }
 
-    function services(){
+    function admin_services(){
         $services= services::get();
         return view('admin.services',compact('services'));
     }
@@ -83,7 +83,7 @@ class Admincontroller extends Controller
         $service->title=$request->title;   
         $service->description=$request->description;   
         $service->save();   
-        return redirect()->route('services'); // Replace 'login' with the actual name of your login route
+        return redirect()->back(); // Replace 'login' with the actual name of your login route
     }
     function service_delete($id){
         services::where('id',$id)->delete();
@@ -106,7 +106,7 @@ class Admincontroller extends Controller
             'title'=>$request->title,
             'description'=>$request->description
         ]);   
-        return redirect()->route('services'); // Replace 'login' with the actual name of your login route
+        return redirect()->back();
     }
 
     function queries(){

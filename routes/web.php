@@ -15,9 +15,7 @@ use App\Http\Controllers\Admincontroller;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+Route::get('/', [Usercontroller::class, 'home'])->name('home');
 Route::get('/about', function () {
     return view('about');
 })->name('about');
@@ -39,9 +37,7 @@ Route::get('/gallery', function () {
 Route::get('/packages', function () {
     return view('packages');
 })->name('packages');
-Route::get('/services', function () {
-    return view('services');
-})->name('services');
+Route::get('/services', [Usercontroller::class, 'services'])->name('services');
 
 Route::get('/tour', function () {
     return view('tour');
@@ -72,3 +68,4 @@ Route::get('/admin_logout', [Admincontroller::class, 'admin_logout'])->name('adm
 Route::get('/queries', [Admincontroller::class, 'queries'])->name('queries');
 Route::get('/fetchdata', [Admincontroller::class, 'fetchdata'])->name('fetchdata');
 Route::get('/readall', [Admincontroller::class, 'readall'])->name('readall');
+Route::get('/admin_packages', [Admincontroller::class, 'admin_packages'])->name('admin_packages');

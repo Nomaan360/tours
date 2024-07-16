@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
 use App\Models\query;
+use App\Models\services;
 
 class Usercontroller extends Controller
 {
@@ -31,5 +32,16 @@ class Usercontroller extends Controller
         //             ->subject($data["subject"]);
         // });
     }
+    function home(){
+        $services=services::get();
+        return view('index',compact('services'));
+    }
+
+    function services(){
+        $services=services::get();
+        return view('services',compact('services'));
+
+    }
+
 
 }
