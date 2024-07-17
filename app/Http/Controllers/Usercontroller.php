@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
 use App\Models\query;
 use App\Models\services;
+use App\Models\package;
+use App\Models\countries;
 
 class Usercontroller extends Controller
 {
@@ -33,8 +35,10 @@ class Usercontroller extends Controller
         // });
     }
     function home(){
+        $countries=countries::select('countries.countryname', 'countries.id')->distinct()->rightjoin('packages','countries.id','=','packages.country_id')->get();
+        $packages=package::select('packages.*','countries.countryname')->join('countries','countries.id','=','packages.country_id')->get();
         $services=services::get();
-        return view('index',compact('services'));
+        return view('index',compact('services','countries','packages'));
     }
 
     function services(){

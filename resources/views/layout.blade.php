@@ -44,11 +44,10 @@
             <div class="row gx-0">
                 <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center" style="height: 45px;">
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/gulamrasulb/" target="_blank"><i class="fab fa-twitter fw-normal"></i></a>
                         <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i class="fab fa-youtube fw-normal"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://in.linkedin.com/in/gulam-rasul-bombaywala-ab02111a?original_referer=https%3A%2F%2Fwww.google.com%2F" target="_blank"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/gulamrasulbombaywala/" target="_blank"><i class="fab fa-instagram fw-normal"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 text-center text-lg-end">
@@ -189,14 +188,14 @@
                         <div class="footer-item d-flex flex-column">
                             <h4 class="mb-4 text-white">Get In Touch</h4>
                             <a href=""><i class="fas fa-home me-2"></i> Ahmedabad, India</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href="" class="mb-3"><i class="fas fa-phone me-2"></i> +91 9825430012</a>
+                            <a href="mailto:Rasul@tairaantoursntravels.com"><i class="fas fa-envelope me-2"></i> Rasul@tairaantoursntravels.com</a>
+                            <a href="tel:9825430012" style="cursor:pointer" class="mb-3"><i class="fas fa-phone me-2"></i> +91 9825430012</a>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-share fa-2x text-white me-2"></i>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href="https://www.facebook.com/gulamrasulb/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href="https://www.instagram.com/gulamrasulbombaywala/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href="https://in.linkedin.com/in/gulam-rasul-bombaywala-ab02111a?original_referer=https%3A%2F%2Fwww.google.com%2F" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                     </div>

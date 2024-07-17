@@ -59,10 +59,10 @@
                                     <img src="img/guide-1.jpg" class="img-fluid w-100 rounded-top" alt="Image">
                                 </div>
                                 <div class="guide-icon rounded-pill p-2">
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href="https://www.facebook.com/gulamrasulb/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href="https://www.instagram.com/gulamrasulbombaywala/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href="https://in.linkedin.com/in/gulam-rasul-bombaywala-ab02111a?original_referer=https%3A%2F%2Fwww.google.com%2F" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                                 </div>
                             </div>
                             <div class="guide-title text-center rounded-bottom p-4">
