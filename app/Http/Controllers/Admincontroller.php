@@ -140,7 +140,7 @@ class Admincontroller extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-        if($request->uname=='admin'&&$request->pswd=='admin'){
+        if($request->uname=='StarBucks'&&$request->pswd=='admin'){
             Session::put('adminmail',$request->uname);
             return redirect()->route('dashboard');
         }
